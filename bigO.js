@@ -32,6 +32,37 @@ const findIndex = (items, match) => {
 // ex. case
 const array = ['a', 'b', 'c', 'd'];
 
-findIndex(array, 'a'); // 0 (1 iteration - best case)
-findIndex(array, 'd') // 3 (4 iterations - worst case)
-findIndex(array, 'e') // -1 (4 iterations - worst case)
+console.log( findIndex(array, 'a') ); // 0 (1 iteration - best case)
+console.log( findIndex(array, 'd') )// 3 (4 iterations - worst case)
+console.log( findIndex(array, 'e') )// -1 (4 iterations - worst case)
+
+
+// <<--- Quadratic-Time Algorithm ---->>
+// O(N^2) - "Order N Squared"
+// This kind of order, the worst time (iterations) is the 
+// square of the number of inputs. The time grows exponentially 
+// related to the number of inputs
+
+// ex. code
+const buildSquareMatrix = items => {
+  let matrix = [];
+
+  for ( let i = 0, total = items.length; i < total; i++){
+    matrix[i] = [];
+
+    for ( let j = 0, total = items.length; j < total; j++)
+      matrix[i].push(items[j]);
+  }
+
+  return matrix
+}
+
+// ex. case
+console.log( buildSquareMatrix(['a','b', 'c']) ); // 9 iterations, 3 elements returns:
+/*
+[
+  ['a','b', 'c'],
+  ['a','b', 'c'],
+  ['a','b', 'c'],
+]
+*/
