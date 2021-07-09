@@ -19,5 +19,3 @@ SelectionSort(List) {
   }
 }
 
-
-
